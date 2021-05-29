@@ -4,8 +4,8 @@ from chatterbox.skills.core import ChatterboxSkill, intent_handler
 class WorkoutSkill(ChatterboxSkill):
     def __init__(self):
         super().__init__()
-        self.pushups = 0
-        self.situps = 0
+        self.pushups = ""
+        self.situps = ""
 
     @intent_handler('workout.intent')
     def handle_workout_intent(self, message):
@@ -17,9 +17,9 @@ class WorkoutSkill(ChatterboxSkill):
     @intent_handler('recap.intent')
     def handle_recap_intent(self, message):
         self.speak('This is how many pushups you did')
-        self.speak('%d pushups' %self.pushups)
+        self.speak('%s pushups' %self.pushups)
         self.speak('This is how many situps you did')
-        self.speak('%d situps' %self.situps)
+        self.speak('%s situps' %self.situps)
 
     def stop(self):
         pass
