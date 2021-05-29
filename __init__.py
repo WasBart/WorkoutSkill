@@ -19,7 +19,7 @@ class WorkoutSkill(ChatterboxSkill):
         self.speak('This is how many pushups you did')
         self.speak('%d pushups' %self.pushups)
         self.speak('This is how many situps you did')
-        self.speak('%d pushups' %self.situps))
+        self.speak('%d pushups' %self.situps)
 
     def stop(self):
         pass
