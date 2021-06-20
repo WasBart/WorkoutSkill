@@ -36,9 +36,9 @@ class WorkoutSkill(ChatterboxSkill):
     @intent_handler('recap.intent')
     def handle_recap_intent(self, message):
         for key, value in self.exercises:
-            self.speak('This is how many %s you did') %key
+            self.speak('This is how many %s you did' %key)
             self.speak('%s %s' % (value, key))
-        self.speak('That was your last workout')
+        self.speak('That was your previous workout')
 
     def stop(self):
         pass
