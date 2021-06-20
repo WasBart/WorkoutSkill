@@ -22,7 +22,7 @@ class WorkoutSkill(ChatterboxSkill):
             exercise = self.get_response('What was the exercise?')
             reps = self.get_response('How many repititions did you do?')
             done = self.get_response('Is that all?')
-            if done == 'Yes':
+            if done == 'yes':
                 more_exercises = False
 
     @intent_handler('recap.intent')
