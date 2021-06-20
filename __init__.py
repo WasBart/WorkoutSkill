@@ -8,12 +8,6 @@ class WorkoutSkill(ChatterboxSkill):
         self.situps = ""
         self.exercises = {}
 
-    #@intent_handler('workout.intent')
-    #def handle_workout_intent(self, message):
-    #    self.speak('Tell me about your workout')
-    #    self.pushups = self.get_response('How many pushups did you do?')
-    #    self.situps = self.get_response('How many situps did you do?')
-    #    self.speak('Thanks for recording your workout')
     @intent_handler('workout.intent')
     def handle_workout_intent(self, message):
         more_exercises = True
@@ -27,15 +21,9 @@ class WorkoutSkill(ChatterboxSkill):
                 self.speak('Thanks for recording your workout')
                 more_exercises = False
 
-    #@intent_handler('recap.intent')
-    #def handle_recap_intent(self, message):
-    #    self.speak('This is how many pushups you did')
-    #    self.speak('%s pushups' %self.pushups)
-    #    self.speak('This is how many situps you did')
-    #    self.speak('%s situps' %self.situps)
     @intent_handler('recap.intent')
     def handle_recap_intent(self, message):
-        for key, value in self.exercises:
+        for key, value in self.exercises.items():
             self.speak('This is how many %s you did' %key)
             self.speak('%s %s' % (value, key))
         self.speak('That was your previous workout')
